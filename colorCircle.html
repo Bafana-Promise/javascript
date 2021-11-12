@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Color</title>
+</head>
+
+<body>
+  <div id="circle" onclick="circleButton()">P</div>
+</body>
+<script>
+  var i = 0;
+  var colors = [Pink, yellow, green, red, blue, orange];
+  var roundCircle = document.getElementById("circle");
+
+  roundCircle.style.width = "200px";
+  roundCircle.style.height = "200px";
+  roundCircle.style.borderRadius = "50%";
+  roundCircle.style.textAlign = "center";
+  roundCircle.style.padding = "40%";
+  roundCircle.style.cursor = "pointer";
+  roundCircle.style.background = colors[i];
+  roundCircle.style.innerHTML = colors[i];
+  roundCircle.style.boxSizing = "border-box";  
+
+  function circleButton(colors) {
+    var intervalid = window.setInterval(function () {
+      i++;
+      if (i < colors.lenght) {
+        roundCircle.style.background = colors[i];
+        roundCircle.style.innerHTML = colors[i];
+      }
+      else {
+        roundCircle.style.background = colors[i];
+        roundCircle.style.innerHTML = colors[i];
+      }
+    },1000);
+  }
+
+  circleButton(colors)
+</script>
+
+</html>

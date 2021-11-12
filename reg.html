@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="stylesheet" href="reg.js"> -->
+</head>
+
+<body>
+    <!-- My Main Container -->
+    <div class="mainContaion" id="myRegi">
+        <!-- My Header  -->
+        <h1>Register</h1>
+        <!-- Lables and Details -->
+        <div class="detail">
+            <label for="name">Name</label>
+            <input type="text" id="name" value="">
+        </div>
+        <div class="detail">
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" value="">
+        </div>
+        <div class="detail">
+            <label for="email">Email</label>
+            <input type="email" id="email" value="">
+        </div>
+        <div class="detail">
+            <label for="password">Password</label>
+            <input type="password" id="password" value="">
+        </div>
+        <!-- My reset ,add and submit button -->
+        <div class="buttonSection">
+            <button onclick="reset()">Cancel</button>
+            <button onclick="addLearner()">Add a Learner</button>
+            <button onclick="storeLearners()">Submit all learners</button>
+        </div>
+
+        <div id="diplaylearners">
+
+        </div>
+    </div>
+
+</body>
+<script>
+    // Elements
+    var firstName = document.getElementById('name');
+    var lastName = document.getElementById('surname');
+    var emailOf = document.getElementById('email');
+    var passD = document.getElementById('password');
+    var clearBtn = document.getElementById('myRegi');
+
+    var learner = {
+        firstName: "",
+        lastName: "",
+        emailOf: "",
+        passD: ""
+    }
+
+    var learnersToStore = [];
+
+    function addLearner() {
+        if (firstName.value && lastName.value && emailOf.value && passD.value) {
+            // Set a new learner Object
+            learner = {
+                firstName: firstName.value,
+                lastName: lastName.value,
+                emailOf: emailOf.value,
+                passD: passD.value
+            }
+
+            learnersToStore.push(learner);
+        }
+    };
+ 
+    // store my learners
+    function storeLearners() {
+        if (learnersToStore.length) {
+            localStorage.setItem('students', JSON.stringify(learnersToStore));
+        } else {
+            alert("There are no learners to store");
+        }
+
+    }
+    // Reste The Form 
+    function reset() {
+        
+        firstName.value = "";
+        lastName.value = "";
+        emailOf.value = "";
+        passD.value = "";
+    }
+
+
+</script>
+
+</html>

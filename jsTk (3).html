@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Lesson</title>
+</head>
+
+<body>
+    <!-- Regigister Form -->
+    <div id="myForm">
+        <h1>Register Form</h1>
+        <!-- Inputs -->
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" value="">
+        </div>
+        <div>
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" value="">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" value="">
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" value="">
+        </div>
+        <!-- Buttons -->
+        <div>
+            <button onclick="form.reset()">Cancel</button>
+            <button onclick="setAndAddStudent()">Add New Student</button>
+            <button onclick="storeStudentsInLocalStorage()">Add All Students</button>
+        </div>
+
+        <div id="displayStudents">
+
+        </div>
+    </div>
+
+    <script>
+        // Elements
+        var firstName = document.getElementById('name');
+        var lastName = document.getElementById('surname');
+        var emailId = document.getElementById('email');
+        var pswd = document.getElementById('password');
+        var regForm = document.getElementById('myForm');
+
+        var student = {
+            firstName: "",
+            lastName: "",
+            emailId: "",
+            pswd: ""
+        }
+
+        var studentsToStore = [];
+
+        function setAndAddStudent() {
+            if (firstName.value && lastName.value && emailId.value && pswd.value) {
+                // Set Student Object
+                student = {
+                    firstName: firstName.value,
+                    lastName: lastName.value,
+                    emailId: emailId.value,
+                    pswd: pswd.value
+                }
+                // Manually Reste The Form
+                firstName.value = "";
+                lastName.value = "";
+                emailId.value = "";
+                pswd.value = "";
+
+                studentsToStore.push(student);
+            };
+        }
+
+        function storeStudentsInLocalStorage() {
+            if (studentsToStore.length) {
+                localStorage.setItem('students', JSON.stringify(studentsToStore));
+            } else {
+                alert("There are no students to store");
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
+
+<!-- <script>
+ // Guessing Game
+        var numberToGuess = Math.floor(Math.random() * 10);
+        var guessCount = 3;
+
+        function promtUser(str) {
+            console.log(numberToGuess)
+            var answer = prompt(str);
+
+            if (answer !== numberToGuess) {
+                guessCount--;
+                if (answer > numberToGuess) {
+                    if (guessCount > 0) {
+                        answer = "Your number is big and you have only " + guessCount + " chances left";
+
+                        promtUser(answer);
+                    } else {
+                        alert("YOU LOSE!!!");
+                        guessCount = 3;
+                        answer = prompt("Guess the number");
+                    }
+                } else if (answer < numberToGuess) {
+                    if (guessCount > 0) {
+                        answer = "Your number is small and you have only " + guessCount + " chances left";
+
+                        promtUser(answer);
+                    } else {
+                        alert("YOU LOSE!!!");
+                        guessCount = 3;
+                        answer = prompt("Guess the number");
+                    }
+                } else {
+                    alert("YOU WIN!!!");
+                    guessCount = 3;
+                    numberToGuess = 13;
+                }
+            } else {
+                alert("YOU WIN!!!");
+                guessCount = 3;
+                numberToGuess = 13;
+            }
+
+            console.log(answer);
+        }
+
+        promtUser("Guess the number");
+</script> -->

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops Test</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var myString = "rhinoceros";
+
+
+    function loopLearning(sentence) {
+        if (sentence.toLowerCase().length < myString.toLowerCase().length) {
+            return console.log(false)
+        }
+        else {
+            for (let i = 0; i < myString.length; i++) {
+                var gotItOrNot = false;
+                for (let j = 0; j < sentence.length; j++) {
+                    if (myString[i] == sentence[j]) {
+                        gotItOrNot = true;
+                        break;
+                    }
+                }
+                if (!gotItOrNot) {
+                    return console.log(false);
+                }
+            }
+            return console.log(true);
+        }
+
+    }
+
+    loopLearning("i went to the zoo and i saw a rhinoceros")
+</script>
+
+</html>

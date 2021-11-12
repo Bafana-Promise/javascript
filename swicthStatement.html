@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swicth Statement</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var land = [];
+    var water = [];
+    var fly = [];
+    var i = 0;
+
+    var animals = [
+        {
+            "name": "Eagle",
+            "location": "fly"
+        },
+        {
+            "name": "Dog",
+            "location": "land"
+        },
+        {
+            "name": "Horse",
+            "location": "land"
+        },
+        {
+            "name": "Swallow",
+            "location": "fly"
+        },
+        {
+            "name": "Whale",
+            "location": "water"
+        },
+        {
+            "name": "Snake",
+            "location": "land"
+        },
+
+    ];
+
+    for (let index = 0; index < animals.length; index++) {
+        switch (animals[index].location) {
+            case "fly":
+                fly.push(animals[index].name)
+                break;
+            case "water":
+                water.push(animals[index].name)
+                break;
+            case "land":
+                land.push(animals[index].name)
+                break;
+        }
+
+    }
+
+    console.log("fly", fly, "water", water, "land", land);
+</script>
+
+</html>

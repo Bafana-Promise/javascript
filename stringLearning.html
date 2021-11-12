@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // var longString = "";
+
+    // function stringOfName(str) {
+    //     var myArr = str.split(" ");
+    //     for (let index = 0; index < myArr.length; index++) {
+    //         if (myArr[index].length> longString.length) {
+    //             longString = myArr[index];
+    //             console.log(longString);
+    //         }
+    //     }
+    // }
+    // stringOfName("My name is Promise and I love Javascript")
+
+    var longString = "";
+    function longestString(str) {
+        var myArr = str.split(" ");
+        for (let index = 0; index < myArr.length; index++) {
+            if (myArr[index].length > longString.length) {
+                longString = myArr[index];
+
+            }
+
+        }
+        return console.log(longString);
+    }
+    longestString("My name is Promise and I love Javascript");
+</script>
+
+</html>

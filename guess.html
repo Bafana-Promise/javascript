@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Game</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // declare my var and making my rando number
+    var anyCharater = 0;
+
+    // making a empty variable which will wait for the value which is going to insert
+    var emptyVar;
+
+    // make a variable that going to receive a value
+    var notRight = "";
+
+    // making my number to repeat re-do itself 
+    function loopNmber() {
+        anyCharater = Math.floor(Math.random() * 10) + 1
+    }
+
+    // i am going to call my function here to work
+    loopNmber()
+
+    // make my for loop to my anyCharater to run 3 times
+    for (let index = 0; index < 3; index++) {
+        // create an note that going to indicate or guide you what to do 
+        emptyVar = prompt(notRight + ' I am thinking of a number from 1 to 10. Guess the number')
+        // my condition if someone wins it will show Congradulation, You won
+        if (anyCharater == emptyVar) {
+            alert('Congradulation, You won')
+            break
+        }
+        // create a second condition if my codition dont run use else
+        else {
+            // create anonther condition to say if these two of my condition use this condion and if my condion is equls 2 run this condition
+            if (index == 2) {
+                alert('The number is' + anyCharater + '.Sorry please try next')
+            }
+            // create a else to say if any of the above is not there use this condition
+            if (emptyVar > anyCharater) {
+                notRight = "Your answer is too high,please try again.";
+            }
+            // create a condition that going to you a hint that you are so close
+            else {
+                notRight = 'Your answer is too low,please try again.'
+            }
+        }
+
+
+    }
+
+
+    
+    var question = prompt("Did you complete Alphie's task? \n YES/NO");
+
+        if(question.toLowerCase() == "yes") {
+            confirmation(true);
+        } else if(question.toLowerCase() == "no") {
+            confirmation(false);
+        } else {
+            respond("Please read the f*cken intructions... HAHAHAHAHAHAAHa")
+        }
+
+        function confirmation(answer) {
+            if (answer) {
+                respond("Hola nja yami...");
+            } else {
+                respond("Uzonya");
+            }
+        }
+
+        function respond(res) {
+            alert(res);
+        }
+        console.log(confirmation && respond)
+</script>
+
+</html>
+
+<!-- <script>
+// declare my var and making my rando number
+var anyCharater = 0;
+
+// making a empty variable which will wait for the value which is going to insert
+var emptyVar;
+
+// make a variable that going to receive a value
+var notRight = "";
+
+// making my number to repeat re-do itself 
+function loopNmber() {
+    anyCharater = Math.floor(Math.random() * 10) + 1
+}
+
+// i am going to call my function here to work
+loopNmber()
+
+// make my for loop to my anyCharater to run 3 times
+for (let index = 0; index < 3; index++) {
+    // create an note that going to indicate or guide you what to do 
+    emptyVar = prompt(notRight + ' I am thinking of a number from 1 to 10. Guess the number')
+    // my condition if someone wins it will show Congradulation, You won
+    if (anyCharater == emptyVar) {
+        alert('Congradulation, You won')
+        break
+    }
+    // create a second condition if my codition dont run use else
+    else {
+        // create anonther condition to say if these two of my condition use this condion and if my condion is equls 2 run this condition
+        if (index == 2) {
+            alert('The number is' + anyCharater + '.Sorry please try next')
+        }
+        // create a else to say if any of the above is not there use this condition
+        if (emptyVar > anyCharater) {
+            notRight = "Your answer is too high,please try again.";
+        }
+        // create a condition that going to you a hint that you are so close
+        else {
+            notRight = 'Your answer is too low,please try again.'
+        }
+    }
+
+
+}
+</script> -->

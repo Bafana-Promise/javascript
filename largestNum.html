@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest Number</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // declare two variables one which has my numbers and second starts at 0
+    var numbers = [10, 4, 7, 100, 300, 5, 8, 8000];
+    var largest = 0;
+
+    // create my for loop and that's going to compare my numbers and my second variable 
+    for (var i = 0; i < numbers.length; i++) {
+        if (largest < numbers[i]) {
+            largest = numbers[i];
+        }
+    }
+    console.log(largest);
+</script>
+
+</html>

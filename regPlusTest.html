@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Register Form</h1>
+        <input type="text" id="firstName" placeholder="Name"><br>
+        <input type="text" id="surname" placeholder="Surname"><br>
+        <input type="text" id="email" placeholder="Email"><br>
+        <input type="password" id="password" placeholder="password"><br>
+        <button onclick="add()">Add students</button><br>
+        <button onclick="store()">Store students</button><br>
+        <button onclick="clearForm()">clear</button>
+    </div>
+ 
+    <script>
+        var firstName = document.getElementById("firstName");
+        var surname = document.getElementById("surname");
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+
+        var student = {};
+        var students = JSON.parse(localStorage.getItem("students"));
+        console.log(students);
+        function add() {
+            if (firstName.value && surname.value && email.value && password.value) {
+                student = {
+                    firstName: firstName.value,
+                    surname: surname.value,
+                    email: email.value,
+                    password: password.value
+                };
+                console.log(student);
+                var found = false;
+            } else {
+                alert("Please fill in all credetials");
+            }
+            students.push(student);
+
+        }
+
+        function store() {
+            if (students.length) {
+                localStorage.setItem("students", JSON.stringify(students));
+            }
+
+        }
+
+        function getStudents() {
+            localStorage.getItem("students");
+        }
+        getStudents();
+
+        function clearForm(){
+            firstName.value =  "";
+            surname.value = "";
+            email.value = "";
+            password.value = ""; 
+        }
+
+    </script>
+</body>
+
+</html>

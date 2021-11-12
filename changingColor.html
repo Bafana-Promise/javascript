@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Page Title</title>
+</head>
+
+<body>
+    <!--HTML-->
+    <div id="round" onclick="changeBackgroundColor()"></div>
+
+    <!--JS-->
+    <script>
+        var roundBox = document.getElementById('round');
+        var i = 0;
+        var colors = ["pink", "yellow", "green", "tomato", "blue", "khaki"];
+
+        roundBox.style.width = "10px";
+        roundBox.style.height = "50px";
+        roundBox.style.borderRadius = "50%";
+        roundBox.style.textAlign = "center";
+        roundBox.style.boxSizing = "border-box";
+        roundBox.style.padding = "10%";
+        roundBox.style.cursor = "pointer";
+        roundBox.style.background = colors[i];
+        roundBox.innerHTML = colors[i];
+
+        function changeBackgroundColor() {
+
+            var intervalId = window.setInterval(function () {
+                i++;
+                if (i < colors.length) {
+                    roundBox.style.background = colors[i];
+                    roundBox.innerHTML = colors[i];
+                } else {
+                    i = 0;
+                    roundBox.style.background = colors[i];
+                    roundBox.innerHTML = colors[i];
+                }
+            }, 1000);
+        }
+
+    </script>
+</body>
+
+</html>
+</script>
+
+
+
+
+<!-- body{
+    margin: 0;
+}
+.colors{
+    width: 40%;
+    height: 40vh;
+    border-radius: 50%;
+}
+.pink{
+    color: black;
+    background: rgb(243, 120, 140);
+}
+.yellow{
+    color: black;
+    background: yellow;
+}
+.green{
+    color: black;
+    background: green;
+}
+.tomatoe{
+    color: black;
+    background: tomato;
+}
+.black{
+    color: white;
+    background: black;
+}
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <script>
+        var randomQuestion = 3;
+        var answer = "";
+        var question = "";
+
+        var name = prompt("what is your name?");
+        var gender = prompt("are you amale or female?").required;
+        var color = prompt("what is your favourite color?");
+
+
+        function QuestionGenerator() {
+            randomQuestion = Math.floor(Math.random() * 3) + 1
+        }
+        if (randomQuestion == answer) {
+            alert("okay")
+        }
+        QuestionGenerator()
+
+        let myString = "answer";
+        alert(" Hi guys, my name is " +  name  + " and I am a " +  gender  + " my favourite color is " + color + ".");
+        
+               
+
+        questionGenerator()
+        for (let randomQuestion = answer; answer < answer; randomQuestion++) {
+            if (randomQuestion == answer) {
+                alert("okay")
+            }
+        } -->
+<!-- </script>
+</body>
+
+</html> -->

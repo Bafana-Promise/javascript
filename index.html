@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+
+<body>
+    
+        <div>
+            <!-- Input Container -->
+            <input type="text" id="inputValue">
+            <!-- Plus Button -->
+            <button onclick="add()">+</button>
+            <!-- Subtract Button -->
+            <button onclick="minus()">-</button>
+            <!-- Reset Button  -->
+            <button onclick="reset()">Reset</button>
+        </div>
+    <div class="secondContainer">
+        <p id="bottomValue"></p>
+    </div>
+    <!-- Script -->
+    <script>
+        // variable 
+        var num = 10;
+        // get element
+        document.getElementById("inputValue").value = num;
+        document.getElementById("bottomValue").innerHTML = num;
+        // function add
+        function add() {
+            num += 3;
+            document.getElementById("bottomValue").innerHTML = num;
+            document.getElementById("inputValue").value = num;
+        }
+        // function minus
+        function minus() {
+            num -= 2;
+            document.getElementById("bottomValue").innerHTML = num;
+            document.getElementById("inputValue").value = num;
+        }
+        // reset button
+        function reset() {
+            num = 10;
+            document.getElementById("bottomValue").innerHTML = 10;
+            document.getElementById("inputValue").value = 10;
+        }
+        
+         
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+</head>
+
+<body>
+    <div>
+        <h1>Tip Calculator</h1>
+        <div>
+            <label for="name">Tip Amount</label>
+            <div>
+                <input id="amount" type="number" placeholder="Tip Amount">
+            </div>
+        </div>
+
+        <div>
+            <label for="name ">How many people are sharing</label>
+            <div>
+                <input type="number" id="people">
+            </div>
+        </div>
+        <div>
+            <label for="bill">Total</label>
+            <div>
+                <input id="tipToShare" disabled></input>
+            </div>
+            <!-- <h4 id="tipToShare"></h4> -->
+        </div>
+        <button onclick="clearSum()">Clear</button>
+        <button onclick="tipCalculator()">Calculate</button>
+    </div>
+
+</body>
+
+<script>
+
+    var option, people, tipToSplit;
+
+    function tipCalculator() {
+        option = document.getElementById("amount").value;
+        people = document.getElementById("people").value;
+        results = Number(option) / Number(people);
+
+        document.getElementById("tipToShare").value = results;
+    }
+
+    function clearSum() {
+        option = document.getElementById("amount").value = "";
+        people = document.getElementById("people").value = "";
+        document.getElementById("tipToShare").value = "";
+
+    }
+</script>
+
+</html>

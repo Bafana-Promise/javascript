@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+
+<body>
+    <script>
+        // given variable to loop through
+        var animal = 'rhinoceros';
+
+        // function to search input characters vs given 
+        function searchCharacters(newWord) {
+            // conditional statement to check length of given word vs that of input
+            if (newWord.toLowerCase().length < animal.toLowerCase().length) {
+                return console.log(false);
+            } else {
+                //loop through my name to get character through index
+                for (let i = 0; i < animal.length; i++) {
+                    // declare a variable to check if character found or not
+                    var found = false;
+                    // loop through newWord to get character by index
+                    for (let j = 0; j < newWord.length; j++) {
+                        // check if all animal characters exists in newWord 
+                        if (animal[i] == newWord[j]) {
+                            // if found continue
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found) {
+                        // if not found console log false
+                        return console.log(false);
+                    }
+                }
+                //if all found console log true
+                return console.log(true);
+            }
+        }
+        //  call function :)
+        searchCharacters("I went to the zoo and saw a rhinoceros");
+
+    </script>
+</body>
+
+</html>

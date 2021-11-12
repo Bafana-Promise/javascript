@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>statement</title>
+</head>
+
+<body>
+    <button onclick="setPrices()">Set Prices</button>
+</body>
+<script>
+
+
+    var stores = [
+        {
+            storeName: "Store A",
+            hatPrice: 35,
+            tShirt: 78,
+            trouser: 125,
+            shoes: 163
+        },
+
+        {
+            storeName: "Store B",
+            hatPrice: 40,
+            tShirt: 60,
+            trouser: 80,
+            shoes: [{ color: "pink", price: 20 }, { color: "black", price: 60 }]
+        },
+
+        {
+            storeName: "Store C",
+            hatPrice: 45,
+            tShirt: 50,
+            trouser: 75,
+            shoes: 120
+        }
+    ]
+    function setPrices() {
+        // console.log(stores[1].tShirt)
+        // console.log(stores[1].shoes[1]);
+        console.log(stores[1].shoes[1].color);
+    }
+</script>
+
+</html>
